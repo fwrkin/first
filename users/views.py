@@ -35,7 +35,7 @@ class UserCreateView(CreateView):
 
 
 
-class EmailVerificationView(View):
+class EmailVerificationView(LoginRequiredMixin, View):
     def email_verification(self, request, token):
         user = get_object_or_404(User, token=token)
         user.is_active = True

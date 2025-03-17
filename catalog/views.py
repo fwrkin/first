@@ -10,7 +10,7 @@ from catalog.forms import ProductForm, ProductModeratorForm
 from catalog.models import Product
 
 
-class ProductCreateView(CreateView):
+class ProductCreateView(LoginRequiredMixin, CreateView):
     model = Product
     form_class = ProductForm
     template_name = 'catalog/product_form.html'
@@ -41,7 +41,7 @@ class ProductUpdateView(LoginRequiredMixin, UpdateView):
         raise PermissionDenied
 
 
-class ProductDeleteView(DeleteView):
+class ProductDeleteView(LoginRequiredMixin, DeleteView):
     model = Product
     success_url = reverse_lazy('catalog:products_list')
 
