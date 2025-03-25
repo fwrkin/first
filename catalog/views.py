@@ -50,5 +50,5 @@ class ProductListView(LoginRequiredMixin,ListView):
     model = Product
 
 
-class ProductDetail(LoginRequiredMixin,DetailView):
+class ProductDetailView(LoginRequiredMixin,DetailView):
     model = Product

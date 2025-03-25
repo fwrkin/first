@@ -59,9 +59,9 @@ class Product(models.Model):
         verbose_name_plural = "Продукты"
         ordering = ["name", "description", "category", "price"]
         permissions = [
-            ("can_edit_product", "can edit any product"),
-            ('can_unpublish_product', 'can unpublish product'),
-            ('can_delete_product', 'can delete product'),
+            ("can_edit_product", "Can edit product"),
+            ('can_unpublish_product', 'Can unpublish product'),
+            ('can_delete_product', 'Can delete product'),
         ]
 
     def __str__(self):
