@@ -46,10 +46,13 @@ class Product(models.Model):
         blank=True,
         null=True,
         verbose_name="Статус публикации",
+        help_text="Укажите, опубликован ли продукт"
     )
     owner = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
+        verbose_name="Владелец продукта",
+        help_text="Укажите владельца продукта",
         blank=True,
         null=True,
     )

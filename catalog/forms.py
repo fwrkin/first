@@ -58,9 +58,3 @@ def clean_price(self):
         raise forms.ValidationError('Цена не может быть меньше 0!')
 
     return price
-
-
-class ProductModeratorForm(ModelForm):
-    class Meta:
-        model = Product
-        fields = ['publication_status']
